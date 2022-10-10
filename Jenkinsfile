@@ -13,8 +13,8 @@ pipeline{
         }
         stage('Start Container'){
             steps{
-                sh 'docker compose up -d'
-                sh 'docker compose ps'
+                sh "docker -H ssh://devops@44.202.101.86 compose up -d"
+                sh 'docker -H ssh://devops@44.202.101.86 compose ps'
             }
         }
     }
